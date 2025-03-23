@@ -4,7 +4,6 @@ import cors from "cors";
 import { createClient } from "@supabase/supabase-js";
 import dotenv from "dotenv";
 
-// Carregar as variáveis do arquivo .env
 dotenv.config();
 
 const supabaseUrl = process.env.SUPABASE_URL as string;
@@ -18,7 +17,7 @@ console.log("SUPABASE_KEY:", process.env.SUPABASE_KEY);
 
 app.use(
   cors({
-    origin: ["http://localhost:3001", "https://evacod.vercel.app/"], // Altere para a URL do seu front-end
+    origin: ["http://localhost:3001", "https://evacod.vercel.app"],
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
