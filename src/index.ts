@@ -13,6 +13,9 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const app = express();
 
+console.log("SUPABASE_URL:", process.env.SUPABASE_URL);
+console.log("SUPABASE_KEY:", process.env.SUPABASE_KEY);
+
 app.use(
   cors({
     origin: "http://localhost:3001", // Altere para a URL do seu front-end
