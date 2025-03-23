@@ -18,7 +18,7 @@ console.log("SUPABASE_KEY:", process.env.SUPABASE_KEY);
 
 app.use(
   cors({
-    origin: "http://localhost:3001", // Altere para a URL do seu front-end
+    origin: ["http://localhost:3001", "https://evacod.vercel.app/"], // Altere para a URL do seu front-end
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
