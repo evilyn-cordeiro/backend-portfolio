@@ -1,0 +1,8 @@
+# variaveis de ambiente
+.env
+
+# Ignorar a pasta node_modules (para projetos Node.js)
+node_modules/
+
+# Ignorar arquivos de build
+/dist/
