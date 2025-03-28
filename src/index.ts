@@ -101,7 +101,7 @@ app.post("/api/form", async (req: Request, res: Response) => {
   try {
     const { data, error } = await supabase
       .from("data_visitants")
-      .insert([{ nome, email, empresa }])
+      .insert([{ nome, email, empresa, idioma }])
       .select();
 
     if (error) {
