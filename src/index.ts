@@ -84,7 +84,7 @@ async function sendEmail(to: string, nome: string, idioma: string) {
 }
 
 app.post("/api/form", async (req: Request, res: Response) => {
-  const { nome, email, empresa, idioma = "pt" } = req.body;
+  const { nome, email, empresa, idioma } = req.body;
 
   const validLanguages = ["pt", "en"];
   const selectedIdioma = validLanguages.includes(idioma) ? idioma : "pt";
