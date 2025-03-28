@@ -84,20 +84,19 @@ async function sendEmail(to: string, nome: string, idioma: string) {
 }
 
 app.post("/api/form", async (req: Request, res: Response) => {
-  const { nome, email, empresa, idioma } = req.body;
+  const { nome, email, empresa } = req.body;
 
-  const validLanguages = ["pt", "en"];
-  const selectedIdioma = validLanguages.includes(idioma) ? idioma : "pt";
+  const idioma = "en";
 
   if (!nome || !email || !empresa) {
     return res.status(400).json({
-      message: messages[selectedIdioma].missingFields,
+      message: messages[idioma].missingFields,
     });
   }
 
   if (!validator.isEmail(email)) {
     return res.status(400).json({
-      message: messages[selectedIdioma].invalidEmail,
+      message: messages[idioma].invalidEmail,
     });
   }
 
@@ -111,16 +110,12 @@ app.post("/api/form", async (req: Request, res: Response) => {
       throw error;
     }
 
-    await sendEmail(email, nome, selectedIdioma);
+    await sendEmail(email, nome, idioma);
 
-    return res
-      .status(201)
-      .json({ message: messages[selectedIdioma].success, data });
+    return res.status(201).json({ message: messages[idioma].success, data });
   } catch (error: any) {
     console.error("Erro ao salvar dados ou enviar o e-mail:", error.message);
-    return res
-      .status(500)
-      .json({ message: messages[selectedIdioma].errorSavingData });
+    return res.status(500).json({ message: messages[idioma].errorSavingData });
   }
 });
 

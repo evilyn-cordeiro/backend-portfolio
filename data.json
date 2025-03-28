@@ -2,6 +2,7 @@
   {
     "nome": "João Silva",
     "email": "joao@empresa.com",
-    "empresa": "Empresa X"
+    "empresa": "Empresa X",
+    "idioma": "en"
   }
 ]
