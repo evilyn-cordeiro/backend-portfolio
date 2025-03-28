@@ -84,9 +84,7 @@ async function sendEmail(to: string, nome: string, idioma: string) {
 }
 
 app.post("/api/form", async (req: Request, res: Response) => {
-  const { nome, email, empresa } = req.body;
-
-  const idioma = "en";
+  const { nome, email, empresa, idioma } = req.body;
 
   if (!nome || !email || !empresa) {
     return res.status(400).json({
