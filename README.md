@@ -13,6 +13,10 @@ Este é o backend da aplicação que automatiza o envio do meu currículo por e-
 - **dotenv**: Para gerenciar variáveis de ambiente de forma segura.
 - **Cors**: Para configurar permissões de acesso entre diferentes origens.
 
+## Documentação de Tabela
+
+![alt text](image.png)
+
 ## 📂 Estrutura do Projeto
 
 ```
